@@ -23,11 +23,19 @@
 		</script>
 
 		<style>
+		body {
+		  	background-image: url("dark-honeycomb.png");
+		  	background-repeat: repeat;
+		}
+		.left-align{
+	   		text-align: left;
+    		padding-left: 131px;
+		}
 		.annoyingPopup {
 			background: blue;
 			color: red;
 			width: 900px;
-			height: 900px;
+			height: 650px;
 			position: absolute;
 		}
 		</style>
@@ -37,7 +45,7 @@
 			<div class="slides">
 				<section>
 					<h1>Chrome tricks</h1>
-					<img src="qrcodeUrl.png" width="600px" />
+					<img src="qrcodeUrl.png" width="500px" />
 				</section>
 				<section>
 					<h1>JS + Chrome</h1>
@@ -68,16 +76,50 @@
 				</section>
 				<section>
 					<h2>Executing code</h2>
-					<p>Console is cool (for one liners)<p>
+					<p>A really powerful REPL</p>
+					<pre><code data-trim>
+					console.table([
+							{"name":"Alice", "id": "1"},
+							{"name":"Bob", "id": "1"}
+					]);
+					console.log("%c WARNING", "font-size: 20px")
+					copy({long:{long:{long:"json"}}})
+					//with network tab open
+					await fetch("https://ifconfig.me/ip").then(r => r.text())
+					</code></pre>
+				</section>
+				<section>
+					<p>Not that good for multiline commands</p> 
+					<p>Not persisted</p> 
 					<p>Sources tab > Snippets<p>
 				</section>
 				<section>
 					<h2>Take control with overrides!</h2>
-					<p>but...</p>
+					<div class="left-align">
+						<p>Change style values<p>
+						<p>Change html<p>
+						<p>Change js<p>
+						<p>but...</p>
+					</div>
 				</section>
 				<section>
 					<h2>With extensions the sky is the limit</h2>
 					<p>Easy! All you need is a manifest.<p>
+				</section>
+				<section>
+					<h2>That looks like this</h2>
+					<pre><code data-trim>
+					{
+						"name": "Getting Started Example",
+						"version": "1.0",
+						"description": "Build an Extension!",
+						"manifest_version": 2
+					}
+					</code></pre>
+					<p>Then go to chrome://extensions > load unpacked</p>
+				</section>
+				<section>
+					<h2>Demo time</h2>
 				</section>
 			</div>
 		</div>
