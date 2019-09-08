@@ -21,12 +21,64 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+		.annoyingPopup {
+			background: blue;
+			color: red;
+			width: 900px;
+			height: 900px;
+			position: absolute;
+		}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>Chrome tricks</h1>
+					<img src="qrcodeUrl.png" width="600px" />
+				</section>
+				<section>
+					<h1>JS + Chrome</h1>
+				</section>
+				<section>
+					<h1>F12 || ctrl+shift+c</h1>
+				</section>
+				<section>
+					<h2>ctrl+shift+p</h2>
+					<ul>
+						<li>Dark Theme</li>
+						<li>Horizontal panel</li>
+					</ul>
+				</section>
+				<section>
+					<div class="annoyingPopup"><blink>Annoying popup</blink></div>
+					<h2>Playing around design</h2>
+					<ul>
+						<li>1</li>
+						<li>3</li>
+						<li>2</li>
+						<li>4</li>
+					</ul>
+					<p>ctrl+shift+c - global variable<p>
+					<p>temp1.contentEditable = true<p>
+					<p>temp1.spellcheck = false<p>
+					<p>ctrl+shift+p screenshot<p>
+				</section>
+				<section>
+					<h2>Executing code</h2>
+					<p>Console is cool (for one liners)<p>
+					<p>Sources tab > Snippets<p>
+				</section>
+				<section>
+					<h2>Take control with overrides!</h2>
+					<p>but...</p>
+				</section>
+				<section>
+					<h2>With extensions the sky is the limit</h2>
+					<p>Easy! All you need is a manifest.<p>
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +89,10 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: false,
+				progress: false,
+				hash: true,
+				transition: 'convex',
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
@@ -45,5 +101,20 @@
 				]
 			});
 		</script>
+
+		<script type="text/javascript">
+      function blink() {
+        var blinks = document.getElementsByTagName('blink');
+        for (var i = blinks.length - 1; i >= 0; i--) {
+          var s = blinks[i];
+          s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+        }
+        window.setTimeout(blink, 1000);
+      }
+      if (document.addEventListener) document.addEventListener("DOMContentLoaded", blink, false);
+      else if (window.addEventListener) window.addEventListener("load", blink, false);
+      else if (window.attachEvent) window.attachEvent("onload", blink);
+      else window.onload = blink;
+    </script>
 	</body>
 </html>
