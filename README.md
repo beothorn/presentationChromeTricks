@@ -18,7 +18,7 @@ I am also leaving out a lot of features. What I want is that at the end of this 
 
 I believe everyone is familiar with this part. To open dev tools we use F12 or CTRL+SHIFT+C to inspect an element.
 
-But first let's make ourselves confortable. Using CTRL+SHIFT+P you can list all commands availables on all menus on dev tools.
+But first let's make ourselves comfortable. Using CTRL+SHIFT+P you can list all commands availables on all menus on dev tools.
 
 Lets first switch to a dark theme.
 __Select Switch to dark theme__
